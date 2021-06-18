@@ -15,3 +15,8 @@ jobs:
     - name: Build
       shell: cmd
       run: '"%MSBUILD_PATH%\MSBuild.exe" GOESP/GOESP.vcxproj /p:Platform=Win32 /p:Configuration=Release'
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: GOESP\Release
